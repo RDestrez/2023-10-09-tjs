@@ -1,14 +1,25 @@
-.Button{
+.Button {
     border: none;
-border-radius: 7px;
-padding: 5px 10 px;
-color : white;
-font-size:large;
-font:900;
-background-color: skyblue;
-margin-right: 15px;
-margin-bottom:15px;
+    border-radius: 7px;
 
-box-shadow: 15px 15 px 25px grey;
+    font-size: large;
+    font: 900;
 
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+
+    background-color: skyblue;
+    color: white;
+
+    box-shadow: 15px 15px 25px grey;
+}
+
+.Button>* {
+    vertical-align: middle;
+}
+
+.Button img {
+    width: 32px;
+    height: 32px;
 }

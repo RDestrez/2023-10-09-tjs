@@ -1,17 +1,25 @@
-import React from 'react';
-import Button from './components/uis/Button/Button';
-
-import './App.css';
+import React from "react";
+import "./App.css";
+import Button from "./components/uis/Button/Button";
 
 function App() {
   return (
     <div className="App">
-     Hello world !! 
-     <hr/>
-     <Button text="Valider" onbuttonclick={(param)=>{console.log('action',param)}}/>
-     <Button text="Valider" onbuttonclick/>
-     <Button text="Benjamin"/>
-     <Button x={[1,2]} c={{abc:123}} s="cc" n={1} b="true" g={undefined} />
+      DEMAT BREIZH
+      <hr />
+      <Button
+        onbuttonclick={(param) => {
+          console.log("action", param);
+        }}
+        children="ertyui"
+        type=PropTypes
+      />
+      <Button text="Annuler"  type="pouf">
+        <img src="https://cdn3.iconfinder.com/data/icons/miscellaneous-80/60/check-256.png" alt="ok" />
+        Coucou
+      </Button>
+      <Button text="Benjamin" />
+      <Button />
     </div>
   );
 }
