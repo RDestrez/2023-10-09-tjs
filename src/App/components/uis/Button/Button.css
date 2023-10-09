@@ -1,0 +1,14 @@
+.Button{
+    border: none;
+border-radius: 7px;
+padding: 5px 10 px;
+color : white;
+font-size:large;
+font:900;
+background-color: skyblue;
+margin-right: 15px;
+margin-bottom:15px;
+
+box-shadow: 15px 15 px 25px grey;
+
+}
