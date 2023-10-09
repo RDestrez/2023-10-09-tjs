@@ -8,10 +8,10 @@ function App() {
     <div className="App">
      Hello world !! 
      <hr/>
-     <Button text="Valider"/>
+     <Button text="Valider" onbuttonclick={(param)=>{console.log('action',param)}}/>
      <Button text="Valider"/>
      <Button text="Benjamin"/>
-     <Button/>
+     <Button x={[1,2]} c={{abc:123}} s="cc" n={1} b="true" g={undefined} />
     </div>
   );
 }
