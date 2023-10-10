@@ -1,18 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FlexWGrowWrapper } from "./FlexWGrow.styled";
+import styles from "./FlexWGrow.module.css";
 
 const FlexWGrow = (props) => {
-
-
   return (
-    <div className={style.FlexWGrow} data-testid="FlexWGrow">
-      {props.chlidren}
+    <div className={styles.FlexWGrow} data-testid="FlexWGrow">
+      {props.children}
     </div>
   );
 };
 
-FlexWGrow.propTypes={
+FlexWGrow.propTypes = {
   children: PropTypes.any.isRequired,
 };
 

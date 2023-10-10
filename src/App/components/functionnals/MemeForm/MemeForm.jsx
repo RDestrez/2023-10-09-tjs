@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { MemeFormWrapper } from "./MemeForm.styled";
+import styles from "./MemeForm.module.css";
 
 const MemeForm = (props) => {
   const [state, setstate] = useState({});
-
   useEffect(() => {
     return () => {
-      second;
     };
-  }, []);
-
+  }, [])
   return (
-    <div className={style.MemeForm} data-testid="MemeForm">
+    <div className={styles.MemeForm} data-testid="MemeForm">
       MemeForm Component
     </div>
   );

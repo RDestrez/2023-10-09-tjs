@@ -1,45 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import "./App.css";
-import Button from "./components/uis/Button/Button";
+import FlexHGrow from "./components/layouts/FlexHGrow/FlexHGrow";
+import Header from "./components/uis/Header/Header";
+import Navbar from "./components/uis/Navbar/Navbar";
+import FlexWGrow from "./components/layouts/FlexWGrow/FlexWGrow";
+import MemeSvgViewer from "./components/uis/MemeSVGViewer/MemeSVGViewer";
+import MemeForm from "./components/functionnals/MemeForm/MemeForm";
+import Footer from "./components/uis/Footer/Footer";
 
-
-function App() {
-  const [counter, setcounter] = useState(-1);
-  //mount uniquement
-  useEffect(() => {
-    //corps du cycle de vie
-    setcounter(0);
-
-    //fonction de démontage de composant
-    return () => {
-     // effect
-    };
-  }, [])
-  //mount et mis à jour
-  useEffect(() => {
-    console.log('didUpdate sur effect', counter);
-  }, [counter])
-
- 
+function App(props) {
   return (
     <div className="App">
-      Valeur counter : {counter}
-      <hr />
-      <Button
-        onbuttonclick={(param) => {
-          setcounter(counter+1);
-          console.log(counter);
-        }}
-       
-      >+1 </Button>
-      <Button
-      text="Annuler"
-        onbuttonclick={(param) => {
-          setcounter(counter-1);
-          console.log(counter);
-        }}
-       
-      >-1 </Button>
+      <FlexHGrow>
+        <Header />
+        <Navbar />
+        <FlexWGrow>
+          <MemeSvgViewer />
+          <MemeForm />
+        </FlexWGrow>
+        <Footer />
+      </FlexHGrow>
     </div>
   );
 }

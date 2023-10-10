@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { NavbarWrapper } from "./Navbar.styled";
+import styles from "./Navbar.module.css";
 
 const Navbar = (props) => {
   const [state, setstate] = useState({});
-
   useEffect(() => {
     return () => {
-      second;
     };
-  }, []);
-
+  }, [])
   return (
-    <div className={style.Navbar} data-testid="Navbar">
+    <div className={styles.Navbar} data-testid="Navbar">
       Navbar Component
     </div>
   );

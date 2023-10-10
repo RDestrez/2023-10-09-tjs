@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { FooterWrapper } from "./Footer.styled";
+import styles from "./Footer.module.css";
 
 const Footer = (props) => {
   const [state, setstate] = useState({});
-
   useEffect(() => {
     return () => {
-      second;
     };
-  }, []);
-
+  }, [])
   return (
-    <div className={style.Footer} data-testid="Footer">
+    <div className={styles.Footer} data-testid="Footer">
       Footer Component
     </div>
   );

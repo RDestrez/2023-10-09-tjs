@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { HeaderWrapper } from "./Header.styled";
+import styles from "./Header.module.css";
 
 const Header = (props) => {
   const [state, setstate] = useState({});
-
   useEffect(() => {
     return () => {
-      second;
     };
-  }, []);
-
+  }, [])
   return (
-    <div className={style.Header} data-testid="Header">
+    <div className={styles.Header} data-testid="Header">
       Header Component
     </div>
   );

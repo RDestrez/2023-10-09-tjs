@@ -1,28 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
 /*function Button(props) {
   return <button>Benjamin</button>;
 }*/
-
-const Button = (props) => {
-  //console.log(props);
-  const [isClicked, setisClicked] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setisClicked(false);
-    }, 350);
-  }, [isClicked])
+interface IButtonProps{
+  onbuttonclick?:Function,
+  children:any,
+  type?:'button'|'submit'|'reset'|undefined
+}
+const Button:React.FC<IButtonProps> = (props) => {
+  console.log(props);
   return (
     <button
       type={props.type}
-      className={`${style.Button}${isClicked ? " " + style.clicked : ""}`}
+      className={style.Button}
       onClick={(evt) => {
-        setisClicked(true);
-
         //traitement de l'event prealable propre au composant
-        //console.log(evt);
+        console.log(evt);
         //declenchement de la fonction envoyée par les props depuis le parent
         if (undefined !== props.onbuttonclick) {
           props.onbuttonclick("on a tapper sur benjamin");
