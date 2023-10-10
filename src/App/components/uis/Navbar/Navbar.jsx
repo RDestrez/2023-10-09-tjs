@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Navbar.module.css";
-import { Nav, Container, Navbar as NavBar } from "react-bootstrap";
-import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css';
-
+import {Nav, Container, Navbar as NavBar} from 'react-bootstrap'
+import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 const Navbar = (props) => {
-  
   return (
     <div className={styles.Navbar} data-testid="Navbar">
-         <NavBar bg="dark" data-bs-theme="dark">
+      <NavBar bg="dark" data-bs-theme="dark">
         <Container>
           <NavBar.Brand href="#home">Navbar</NavBar.Brand>
           <Nav className="me-auto">
@@ -21,6 +19,5 @@ const Navbar = (props) => {
     </div>
   );
 };
-
 
 export default Navbar;
