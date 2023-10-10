@@ -8,12 +8,14 @@ const MemehtmlForm = (props) => {
   const [state,setstate] = useState(emptyMeme);
   return (
     <div className={styles.MemehtmlForm} data-testid="MemehtmlForm">
-      <htmlForm>
+      <form>
         <label htmlFor="titre" >
           <h1>Titre</h1>
         </label>
         <br />
-        <input name="titre" id="titre" value={state.titre} />
+        <input name="titre" id="titre" value={state.titre} onChange={(evt) =>{
+          setstate({...state,titre:evt.target.value});
+        }}/>
         <hr />
         <label htmlFor="image">
           <h2>Image</h2>
@@ -27,23 +29,31 @@ const MemehtmlForm = (props) => {
           <h2>texte</h2>
         </label>
         <br />
-        <input name="text" id="text" type="text" value={state.text} />
+        <input name="text" id="text" type="text" value={state.text} onChange={(evt) =>{
+          setstate({...state,titre:evt.target.value});
+        }} />
         <br />
         <label htmlFor="x">
           <h2 className={styles.inline}>x :</h2>
         </label>
-        <input className={styles.smallNumber} name="x" id="x" type="number" value={state.x}  />
+        <input className={styles.smallNumber} name="x" id="x" type="number" value={state.x} onChange={(evt) =>{
+          setstate({...state,x:Number(evt.target.value)});
+        }}  />
         <label htmlFor="y">
           <h2 className={styles.inline}>y :</h2>
         </label>
-        <input className={styles.smallNumber} name="y" id="y" type="number"  value={state.y} />
+        <input className={styles.smallNumber} name="y" id="y" type="number"  value={state.y} onChange={(evt) =>{
+          setstate({...state,y:Number(evt.target.value)});
+        }}/>
         <hr />
         <br />
         <h2>Decorations</h2>
         <label htmlFor="color">
           <h2 className={styles.inline}>color :</h2>
         </label>
-        <input name="color" id="color" type="color" value={state.color} />
+        <input name="color" id="color" type="color" value={state.color} onChange={(evt) =>{
+          setstate({...state,color:evt.target.value});
+        }}/>
         <br />
         <label htmlFor="fontSize">
           <h2 className={styles.inline}>font-size :</h2>
@@ -55,6 +65,9 @@ const MemehtmlForm = (props) => {
           type="number"
           min="0"
           value={state.fontSize} 
+          onChange={(evt) =>{
+            setstate({...state,fontSize:Number(evt.target.value)});
+          }}
         />
         px
         <br />
@@ -70,9 +83,14 @@ const MemehtmlForm = (props) => {
           step="100"
           max="900"
           value={state.fontWeight}
+          onChange={(evt) =>{
+            setstate({...state,fontWeight:Number(evt.target.value)});
+          }}
         />
         <br />
-        <input name="underline" id="underline" type="checkbox" checked={state.underline}/>
+        <input name="underline" id="underline" type="checkbox" checked={state.underline} onChange={(evt) =>{
+          setstate({...state,underline:evt.target.checked});
+        }}/>
         &nbsp;
         <label htmlFor="underline">
           <h2 className={styles.inline}>underline</h2>
@@ -82,7 +100,9 @@ const MemehtmlForm = (props) => {
           <h2 className={styles.inline}>italic</h2>
         </label>
         &nbsp;
-        <input name="italic" id="italic" type="checkbox" checked={state.italic} />
+        <input name="italic" id="italic" type="checkbox" checked={state.italic} onChange={(evt) =>{
+          setstate({...state,italic:evt.target.checked});
+        }}/>
         <hr />
         <br />
         <label htmlFor="frameSizeX">
@@ -95,6 +115,9 @@ const MemehtmlForm = (props) => {
           type="number"
           min="0"
           value={state.frameSizeX}
+          onChange={(evt) =>{
+            setstate({...state,frameSizeX: Number(evt.target.value)});
+          }}
         />
         px
         <label htmlFor="frameSizeY">
@@ -107,11 +130,14 @@ const MemehtmlForm = (props) => {
           type="number"
           min="0"
           value={state.frameSizeY}
+          onChange={(evt) =>{
+            setstate({...state,frameSizeY: Number(evt.target.value)});
+          }}
         />
         px
         <br />
         <Button type={"submit"}>OK</Button>
-      </htmlForm>
+      </form>
     </div>
   );
 };
