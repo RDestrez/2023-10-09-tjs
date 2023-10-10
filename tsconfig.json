@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "GRC_templates/genericFunction/TemplateName"  ]
 }

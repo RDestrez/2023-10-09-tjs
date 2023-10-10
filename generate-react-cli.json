@@ -1,6 +1,6 @@
 {
   "usesTypeScript": false,
-  "usesStyledComponents": true,
+  "usesStyledComponents": false,
   "usesCssModule": true,
   "cssPreprocessor": "css",
   "testLibrary": "Testing Library",
@@ -11,6 +11,16 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "func":{
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"GRC_Template/genericFunction/TemplateName.js"
+      } 
     }
   }
 }
