@@ -19,6 +19,8 @@ function App() {
   useEffect(() => {
     console.log('didUpdate sur effect', counter);
   }, [counter])
+
+ 
   return (
     <div className="App">
       Valeur counter : {counter}
