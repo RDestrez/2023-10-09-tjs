@@ -24,12 +24,6 @@ function App(props) {
   return (
     <>
     <div className="App">
-      <div>
-        <Link to="/home" >HOME</Link>
-        <Link to="/thumbnail" >THUMBNAIL</Link>
-        <Link to="/editor" >EDITOR</Link>
-        <Link to="/editor/2" >EDITOR2</Link>
-      </div>
       <FlexHGrow>
         <Header/>
         <Navbar/>
