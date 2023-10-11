@@ -17,7 +17,7 @@ const ressourcesSlice = createSlice({
       state.memes.push(...action.payload);
     });
     builder.addCase('current/save/fulfilled',(state,action)=>{
-       const postion = state.memes.findIndex(m=>m.id === action.payload.id);
+       const position = state.memes.findIndex(m=>m.id === action.payload.id);
        if(position>=0){
         state.memes[position] = action.payload;
        }
