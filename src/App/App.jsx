@@ -9,6 +9,9 @@ import Footer from "./components/uis/Footer/Footer";
 import { emptyMeme } from "orsys-tjs-meme";
 import  MemeSVGViewer from "./components/uis/MemeSVGViewer/MemeSVGViewer";
 import {Modal} from "./components/Modal/Modal"
+import {Link, Route, Routes} from "react-router-dom"
+import Thumbnail from "./components/pages/thumbnail";
+import Editor from "./components/pages/Editor";
 
 function App(props) {
 //  const [state, setstate] = useState(emptyMeme);
@@ -22,15 +25,17 @@ function App(props) {
   return (
     <>
     <div className="App">
-      <FlexHGrow>
-        <Header />
-        <Navbar />
-        <FlexWGrow>
-          <MemeSVGViewer basePath=""/>
-          <ConnectedMemeForm/>
-        </FlexWGrow>
-        <Footer />
-      </FlexHGrow>
+      <div>
+        <Link to="/home" >HOME</Link>
+        <Link to="/thumbnail" >THUMBNAIL</Link>
+        <Link to="/editor" >EDITOR</Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<div>Bienvenue</div>}/>
+        <Route path="/thumbnail" element={<Thumbnail />} />
+        <Route path="/editor" element={<Editor />}/>
+      </Routes>
+     
     </div>
    <Modal/>
    </>
