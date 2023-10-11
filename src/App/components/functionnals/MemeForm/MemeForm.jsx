@@ -4,12 +4,15 @@ import styles from "./MemeForm.module.css";
 import Button from "../../uis/Button/Button";
 import { emptyMeme } from "orsys-tjs-meme";
 import { useSelector, useDispatch} from "react-redux";
-import { changeMeme } from "../../../store/currentSlice";
+import { changeMeme, saveCurrent } from "../../../store/currentSlice";
 
 const MemeForm = (props) => {
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
-      <form>
+      <form onSubmit={(evt)=>{
+        evt.preventDefault();
+        props.onMemeSubmit(props.meme);
+      }}>
         <label htmlFor="titre">
           <h1>Titre</h1>
         </label>
@@ -233,12 +236,17 @@ MemeForm.propTypes = {
   onMemeChange: PropTypes.func.isRequired,
   meme: PropTypes.object.isRequired,
   images: PropTypes.array.isRequired,
+  onMemeSubmit:PropTypes.func.isRequired
 };
 
 export function ConnectedMemeForm(props){
   const current=useSelector ((s) => s.current)
   const images= useSelector((s) => s.ressources.images)
   const dispatch=useDispatch();
-  return <MemeForm {...props} meme={current} images={images} onMemeChange={(meme)=> dispatch(changeMeme(meme))}/>
+  return <MemeForm {...props} meme={current} images={images} onMemeChange={(meme)=> dispatch(changeMeme(meme))}
+  onMemeSubmit={(meme) => {
+    dispatch(saveCurrent(meme))
+  }}
+  />
 }
 
