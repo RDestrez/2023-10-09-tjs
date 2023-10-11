@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../uis/Button/Button";
 import { emptyMeme } from "orsys-tjs-meme";
+import { useSelector, useDispatch} from "react-redux";
+import { changeMeme } from "../../../store/currentSlice";
 
 const MemeForm = (props) => {
   return (
@@ -232,3 +234,13 @@ MemeForm.propTypes = {
   meme: PropTypes.object.isRequired,
   images: PropTypes.array.isRequired,
 };
+
+export function ConnectedMemeForm(props){
+  const current=useSelector ((s) => s.current)
+  const dispatch=useDispatch();
+  return <MemeForm {...props} meme={current} onMemeChange={(meme)=> dispatch(changeMeme(meme))}/>
+}
+
+ConnectedMemeForm.propTypes = {
+  images: PropTypes.array.isRequired,
+}
