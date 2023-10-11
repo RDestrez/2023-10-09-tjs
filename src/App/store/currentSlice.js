@@ -8,11 +8,15 @@ const currentSlice = createSlice({
   initialState,
   reducers: {
     changeMeme: (state,action)=>{
-        
+        Object.assign(state,action.payload)
+    },
+    clearMeme:(state)=>{
+        Object.assign(state,emptyMeme);
+        delete state.id;
     }
   }
 });
 
-export const {} = currentSlice.actions
+export const {changeMeme,clearMeme} = currentSlice.actions
 
 export default currentSlice.reducer
