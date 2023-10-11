@@ -237,10 +237,8 @@ MemeForm.propTypes = {
 
 export function ConnectedMemeForm(props){
   const current=useSelector ((s) => s.current)
+  const images= useSelector((s) => s.ressources.images)
   const dispatch=useDispatch();
-  return <MemeForm {...props} meme={current} onMemeChange={(meme)=> dispatch(changeMeme(meme))}/>
+  return <MemeForm {...props} meme={current} images={images} onMemeChange={(meme)=> dispatch(changeMeme(meme))}/>
 }
 
-ConnectedMemeForm.propTypes = {
-  images: PropTypes.array.isRequired,
-}
