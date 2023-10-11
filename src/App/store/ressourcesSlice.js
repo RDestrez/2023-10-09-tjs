@@ -16,6 +16,15 @@ const ressourcesSlice = createSlice({
       state.memes.splice(0);
       state.memes.push(...action.payload);
     });
+    builder.addCase('current/save/fulfilled',(state,action)=>{
+       const postion = state.memes.findIndex(m=>m.id === action.payload.id);
+       if(position>=0){
+        state.memes[position] = action.payload;
+       }
+       else{
+        state.memes.push(action.payload);
+       }
+    });
     // builder.addCase('ressources/loadImages/rejected',()=>{console.log('erreur de chargement')});
   },
 });
